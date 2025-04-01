@@ -29,7 +29,111 @@ function onNewMessageComposeHandler(event) {
             }
 
             // Add the created signature to the message.
-            const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext;
+            const signature = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .ImprintUniqueID {
+            margin: 0cm 0cm 0pt;
+        }
+        .ImprintUniqueIDTable {
+            margin: 0cm 0cm 0pt;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .Section1 {
+            page: Section1;
+        }
+    </style>
+</head>
+<body>
+    <table class="ImprintUniqueIDTable" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td><font style="font-family: Calibri; font-size: 14pt; color: #001D56; font-weight: bold;">Fullname</font></td>
+            </tr>
+            <tr>
+                <td style="padding-bottom: 5px; padding-top: 5px;">
+                    <table class="ImprintUniqueIDTable" cellspacing="0" cellpadding="0" border="0" style="width: auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding-bottom: 5px; padding-top: 5px; padding-left: 10px; padding-right: 10px; background-color: #6bdad4;">
+                                    <font style="font-family: Calibri; font-size: 11pt; color: #001D56; font-weight: bold;">Title</font>
+                                    <font style="font-family: Calibri; font-size: 11pt; color: #001D56; font-weight: normal;"> - Department </font>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-top: #001d56 1px solid; padding-top: 5px;">
+                    <table class="ImprintUniqueIDTable" cellspacing="0" cellpadding="0" border="0" style="width: auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 10px;" align="center">
+                                    <img width="19" height="15" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/icons/Tel Icon.png" alt="Telephone">
+                                </td>
+                                <td>
+                                    <font style="font-family: Calibri; font-size: 11pt; color: #000001;">telephone Ext: 1076</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 5px; padding-right: 10px;" align="center">
+                                    <a href="#" target="_blank">
+                                        <img width="8" height="15" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/icons/Phone Icon.png" alt="Mobile">
+                                    </a>
+                                </td>
+                                <td style="padding-top: 5px;">
+                                    <font style="font-family: Calibri; font-size: 11pt; color: #000001;">phone number</font>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 14px;">
+                    <font style="font-family: Calibri; font-size: 11pt;">Prudential Bank Ltd., 8 John Harmond Street, Ring Road Central</font><br>
+                    <font style="font-family: Calibri; font-size: 11pt;">Accra - Ghana</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 5px;">
+                    <table class="ImprintUniqueIDTable" cellspacing="0" cellpadding="0" border="0" style="width: auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 5px;">
+                                    <a href="https://www.facebook.com/prudentialbankgh" target="_blank">
+                                        <img width="25" height="25" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/email/EmailIcons/facebook.png" alt="Facebook">
+                                    </a>
+                                </td>
+                                <td style="padding-right: 5px;">
+                                    <a href="https://www.instagram.com/prudentialbankgh/" target="_blank">
+                                        <img width="25" height="25" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/email/EmailIcons/instagram.png" alt="Instagram">
+                                    </a>
+                                </td>
+                                <td style="padding-right: 5px;">
+                                    <a href="https://twitter.com/pblghana" target="_blank">
+                                        <img width="25" height="25" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/email/EmailIcons/twitter.png" alt="Twitter">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="https://www.linkedin.com/company/prudential-bank-gh" target="_blank">
+                                        <img width="25" height="25" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/email/EmailIcons/linkedin.png" alt="LinkedIn">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>` + result.asyncContext;
             item.body.setSignatureAsync(signature, { coercionType: Office.CoercionType.Html }, (result) => {
                 if (result.status === Office.AsyncResultStatus.Failed) {
                     console.log(result.error.message);
