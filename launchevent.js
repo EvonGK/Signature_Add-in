@@ -137,7 +137,7 @@ function onNewMessageComposeHandler(event) {
         <img width="100%" height="10%" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/EBanners/randombanners/2.jpg" alt="Background Image">
     </a>
 </body>
-</html>` + result.asyncContext;
+</html>`;
             item.body.setSignatureAsync(signature, { coercionType: Office.CoercionType.Html }, (result) => {
                 if (result.status === Office.AsyncResultStatus.Failed) {
                     console.log(result.error.message);
