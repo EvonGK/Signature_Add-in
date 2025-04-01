@@ -132,6 +132,10 @@ function onNewMessageComposeHandler(event) {
             </tr>
         </tbody>
     </table>
+    <br>
+    <a href="https://www.prudentialbank.com.gh/" target="_blank">
+        <img width="100%" height="10%" style="border: 0px solid;" src="https://www.prudentialbank.com.gh/images/EBanners/randombanners/2.jpg" alt="Background Image">
+    </a>
 </body>
 </html>` + result.asyncContext;
             item.body.setSignatureAsync(signature, { coercionType: Office.CoercionType.Html }, (result) => {
