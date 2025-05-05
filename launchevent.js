@@ -52,7 +52,7 @@ function onNewMessageComposeHandler(event) {
     <table class="ImprintUniqueIDTable" cellspacing="0" cellpadding="0" border="0">
         <tbody>
             <tr>
-                <td><font style="font-family: Calibri; font-size: 14pt; color: #001D56; font-weight: bold;">Fullname</font></td>
+                <td><font style="font-family: Calibri; font-size: 14pt; color: #001D56; font-weight: bold;">${name}</font></td>
             </tr>
             <tr>
                 <td style="padding-bottom: 5px; padding-top: 5px;">
